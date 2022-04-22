@@ -1,0 +1,125 @@
+/* 
+
+EXPERIMENT 2 | "ANIMATED"
+
+~
+
+Using CSS keyframe animations, create a webpage that has at least one
+motion or time-based element to its design. The content and visual
+direction are up to you. It doesn't need to be a full webpage, just
+an example of using CSS animations at least once (more is encouraged).
+
+https://www.w3schools.com/css/css3_animations.asp
+
+~
+
+CSS Grid can be a huge help here (it's great for almost all layout stuff for web)
+and there are a few links to help you get started on the class resources page:
+
+https://ianmcdonald.ca/resources/
+
+~ 
+
+Have fun, break things, try new things ... this is an experiment after all :)
+
+
+Ok, now for the styles!
+
+*/
+
+
+
+
+
+/* COLOR VARIABLES
+============================================================================== */
+
+:root {
+  --light: #ffffff;
+  --dark: #0000ff;
+}
+
+
+
+
+
+/* BASE STYLES
+============================================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100vw;
+  background: var(--light);
+  color: var(--dark);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 1.25;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+main {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  min-height: 100vh;
+}
+
+
+/* YOUR STYLES
+============================================================================== */
+
+body {
+  animation-name: bg-colors;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  animation-direction: alternate;
+}
+
+
+.robo {
+  animation-name: floating;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+
+}
+
+
+
+
+/* ANIMATIONS
+============================================================================== */
+
+@keyframes bg-colors { 
+  0% { background-color: darksalmon; }
+  50% { background-color: hotpink; }
+  100% { background-color: rgb(21, 15, 102); }
+}
+
+@keyframes floating {
+0% { transform: translateY(-10em) translateX(-20em); }
+12.5% { transform: translateY(10em) translateX(-15em) rotate(-90deg) scaleX(0.5); }
+25% { transform: translateY(-10em) translateX(-10em); }
+37.5% { transform: translateY(10em) translateX(-5em) rotate(90deg) scaleX(0.5); }
+50% { transform: translateY(-10em) translateX(0em); }
+62.5% { transform: translateY(10em) translateX(5em) scaleY(0.5); }
+75% { transform: translateY(-10em) translateX(10em); }
+87.5% { transform: translateY(10em) translateX(15em) rotate(1000deg) scale(0.5); }
+100% { transform: translateY(-10em) translateX(20em); }
+}
+
+
+
